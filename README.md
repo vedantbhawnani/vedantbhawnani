@@ -1,5 +1,4 @@
-# impulsv
-Config files for my GitHub profile.
+# Vedant Bhawnani
 
 🔭 I'm Vedant, a final year AI & Data Science student at DJ Sanghvi College of Engineering, Mumbai. I enjoy exploring the world of Machine Learning, Deep Learning, and Data Analysis, and applying these technologies to solve real-world problems. 
 
