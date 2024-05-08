@@ -1,0 +1,26 @@
+name: Profile Views Counter
+
+on:
+  page_build
+
+jobs: 
+  count_views:
+    runs_on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+      - uses: actions/checkout@v3
+      - name: Read visitory count
+        id: read_count
+        run: |
+          COUNT$(cat views.txt || echo 0)
+          echo "::set-output name=count::$COUNT"
+      - name: Update visitor count
+        run: |
+          COUNT=$(( $({steps.read_count_outputs.count }) + 1 ))
+          echo "$COUNT" >views.txt
+      - name: Commit changes
+        uses: actions:commit@v3
+        with:
+          message: "Update profile view count"
+          files: view.txt
+          token: ${{ secrets.GITHUB_TOKEN }}
